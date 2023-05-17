@@ -139,7 +139,10 @@ class Generator {
 
     // Create a black bottom layer
     final biggerImage = copyResize(image, width: widthPx, height: heightPx);
-    fill(biggerImage, color: ColorFloat16(0));
+    fill(
+      biggerImage,
+      color: ColorRgb8(0, 0, 0),
+    );
     // Insert source image into bigger one
     compositeImage(biggerImage, image, dstX: 0, dstY: 0);
 
@@ -148,7 +151,7 @@ class Generator {
 
     while (left < widthPx) {
       final Image slice = copyCrop(biggerImage, x: left, y: 0, width: lineHeight, height: heightPx);
-      final Uint8List bytes = slice.getBytes(order: ChannelOrder.argb);
+      final Uint8List bytes = slice.getBytes(order: ChannelOrder.grayAlpha);
       blobs.add(bytes);
       left += lineHeight;
     }
