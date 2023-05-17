@@ -45,7 +45,7 @@ class PaperSize {
     } else if (value == PaperSize.mm72.value) {
       return 512;
     } else {
-      return 558;
+      return 576;
     }
     // value == PaperSize.mm58.value ? 384 : 558;
   }

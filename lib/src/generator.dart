@@ -10,22 +10,23 @@ import 'dart:convert';
 import 'dart:typed_data' show Uint8List;
 import 'package:hex/hex.dart';
 import 'package:image/image.dart';
-import 'package:gbk_codec/gbk_codec.dart';
-import 'package:esc_pos_utils/esc_pos_utils.dart';
+import 'package:esc_pos_utils_plus/esc_pos_utils.dart';
 import 'enums.dart';
 import 'commands.dart';
 
 class Generator {
   Generator(this._paperSize, this._profile, {this.spaceBetweenRows = 5});
 
-  // Ticket config
+  /// Ticket config
   final PaperSize _paperSize;
   CapabilityProfile _profile;
   int? _maxCharsPerLine;
-  // Global styles
+
+  /// Global styles
   String? _codeTable;
   PosFontType? _font;
-  // Current styles
+
+  /// Current styles
   PosStyles _styles = PosStyles();
   int spaceBetweenRows;
 
@@ -139,10 +140,7 @@ class Generator {
 
     // Create a black bottom layer
     final biggerImage = copyResize(image, width: widthPx, height: heightPx);
-    fill(
-      biggerImage,
-      color: ColorRgb8(0, 0, 0),
-    );
+    fill(biggerImage, color: ColorUint1(0));
     // Insert source image into bigger one
     compositeImage(biggerImage, image, dstX: 0, dstY: 0);
 

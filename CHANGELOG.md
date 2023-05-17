@@ -1,8 +1,34 @@
-## [1.1.0]
+## [2.0.1+6]
 
-- Null-Safety
-- Update libraries
-- Added new printer support: HPRT TP806L
+- pre-cache capabilities
+
+## [2.0.1+5]
+
+- add paper size mm72 by keep mm80 as 576
+
+## [2.0.1+4]
+
+- change paper size width back from 576 to 558
+
+## [2.0.1+3]
+
+- change paper size width from 372 to 384 and 558 to 576
+
+## [2.0.1+2]
+
+- hotfix resource
+
+## [2.0.1+1]
+
+- hotfix resource
+
+## [2.0.1]
+
+- included gbk_codec directly
+
+## [2.0.0]
+
+- nullable implemented
 
 ## [1.0.0]
 
